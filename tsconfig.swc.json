@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "formatCodeOptions": {
+      "tabSize": 2,
+      "indentSize": 2
+    },
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": false,
+        "allowUnreachableCode": false,
+        "esModuleInterop": false,
+          // Ensure that .d.ts files are created by tsc, but not .js files
+  "declaration": true,
+  "emitDeclarationOnly": true,
+  // Ensure that Babel can safely transpile files in the TypeScript project
+  "isolatedModules": true
+        "tsBuildInfoFile": "./",
+        "moduleResolution": "nodenext",
+        "moduleDetection": "auto",
+        "module": "NodeNext",
+        "target": "ESNext",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "types": [
+          "@types/node"
+        ],
+        "plugins": [
+          {
+            "name": "typescript-eslint-language-service"
+          }
+        ]
+      },
+      "include": [
+        "src/**/*.ts"
+      ],
+      "exclude": [
+        "**/node_modules",
+        "**/.*/",
+        "src/**/*.test.ts"
+      ],
+"ts-node": {
+  "swc": true
+}
+}
